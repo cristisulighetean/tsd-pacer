@@ -1,0 +1,14 @@
+# Target chip
+CONFIG_IDF_TARGET="esp32p4"
+
+# 16MB onboard NOR flash
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# TODO once idf.py is installed and `idf.py set-target esp32p4` has run once:
+# - confirm exact PSRAM (CONFIG_SPIRAM_*) symbol names for esp32p4 and enable the
+#   in-package 32MB PSRAM
+# - confirm FreeRTOS tick rate symbol and raise to 1000Hz if not already default
+# - confirm UART DMA buffer size symbols for the GNSS UART once that's wired up (Stage 1)
